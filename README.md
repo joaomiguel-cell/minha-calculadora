@@ -29,3 +29,8 @@ Projeto criado para praticar lógica de programação e estilização CSS.
 - JavaScript (ES6+)
 
 ## 📁 Estrutura do Projeto
+
+calculadora/
+├── calculadora.html    # Arquivo principal (HTML + CSS + JS)
+└── README.md           # Este arquivo
+
