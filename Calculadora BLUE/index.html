@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #001f3f; }
+  .calc { background: #003366; padding: 20px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+  #display { width: 200px; height: 40px; margin-bottom: 10px; font-size: 24px; text-align: right; padding: 5px; background: #004080; color: white; border: none; border-radius: 5px; }
+  button { width: 45px; height: 45px; margin: 2px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; background: #0066cc; color: white; }
+  button:hover { background: #0080ff; }
+  .op { background: #004080; }
+</style>
+</head>
+<body>
+<div class="calc">
+  <input type="text" id="display" readonly>
+  <br>
+  <button onclick="add('7')">7</button><button onclick="add('8')">8</button><button onclick="add('9')">9</button><button class="op" onclick="add('/')">÷</button><br>
+  <button onclick="add('4')">4</button><button onclick="add('5')">5</button><button onclick="add('6')">6</button><button class="op" onclick="add('*')">×</button><br>
+  <button onclick="add('1')">1</button><button onclick="add('2')">2</button><button onclick="add('3')">3</button><button class="op" onclick="add('-')">−</button><br>
+  <button onclick="add('0')">0</button><button onclick="add('.')">.</button><button onclick="calcular()">=</button><button class="op" onclick="add('+')">+</button><br>
+  <button onclick="limpar()" style="width: 196px; background: #003366;">C</button>
+</div>
+<script>
+function add(v) { document.getElementById('display').value += v; }
+function limpar() { document.getElementById('display').value = ''; }
+function calcular() { 
+  try { 
+    document.getElementById('display').value = eval(document.getElementById('display').value); 
+  } catch { 
+    document.getElementById('display').value = 'Erro'; 
+  } 
+}
+</script>
+</body>
+</html>
